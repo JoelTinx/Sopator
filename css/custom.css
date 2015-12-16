@@ -1,0 +1,69 @@
+.app-nav {
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;;
+}
+
+.app-brand {
+  padding-top: 10px !important;
+}
+
+#lienzo
+{
+    background-color: #FFF;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+#lstPalabras {
+  height: 370px;
+}
+
+#txtOutput {
+  font-family: Consolas;
+  font-size: 12px;
+  width: 100%;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+/* Consejos*/
+.appText {
+  font-size: 16px;
+  line-height: 40px;
+}
+
+#appTxtConsolas {
+  font-family: Consolas;
+}
+
+/* Código */
+#appContCode {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#codex
+{
+    font-size: 12px;
+    margin: 0 auto !important;
+    text-align: left;
+    width: 520px;
+}
+
+.appText2 {
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.app-cont {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding: 0 10px 20px 10px;
+}
