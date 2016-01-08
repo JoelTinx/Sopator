@@ -1,6 +1,4 @@
-var lstWord = [];
-var txtPal;
-var lstPal;
+var lstWord = [], txtPal, lstPal;
 
 function init()
 {
@@ -12,9 +10,7 @@ function init()
 function enter(evt)
 {
     if(evt.keyCode==13)
-    {
         addWord();
-    }
 }
 
 function addWord()
@@ -24,7 +20,6 @@ function addWord()
         lstWord.push(txtPal.value.replace(" ", "").toUpperCase());
         cargaLista(txtPal.value.replace(" ", "").toUpperCase());
         txtPal.value = "";
-        //console.log(lstWord);
     }
     else
     {

@@ -14,23 +14,9 @@
 * version: 0.0.2
 */
 var sopator = (function(){
-    var dirx = [[ 1, 0],
-                [ 1,-1],
-                [ 0,-1],
-                [-1,-1],
-                [-1, 0],
-                [-1, 1],
-                [ 0, 1],
-                [ 1, 1]];
+    var dirx = [[ 1, 0], [ 1,-1], [ 0,-1], [-1,-1], [-1, 0], [-1, 1], [ 0, 1], [ 1, 1]];
 
-    var dirs = [/*[ 1, 0]*/[ 0, 0], //BIEN
-                /*[ 1,-1]*/[ 0.3, 1], // -- VERIFY YYY
-                /*[ 0,-1]*/[ 0.75, 1], //BIEN
-                /*[-1,-1]*/[ 0.35, 0.9], //-- VERIFY YYY
-                /*[-1, 0]*/[ 1, 0], //BIEN
-                /*[-1, 1]*/[ 0.4, -0.2], //-- VERIFY YYY
-                /*[ 0, 1]*/[ 0.75, 0], // BIEN
-                /*[ 1, 1]*/[ 0.35, -0.2]]; //-- VERIFY YYY
+    var dirs = [[ 0, 0], [ 0.3, 1], [ 0.75, 1], [ 0.35, 0.9], [ 1, 0], [ 0.4, -0.2], [ 0.75, 0], [ 0.35, -0.2]];
 
     var nSize = 25;
     var nAlto = 520;
@@ -86,9 +72,9 @@ var sopator = (function(){
     {
         for(var i=0; i<palabras.length; i++)
         {
-            var x = parseInt(Math.floor(Math.random()*nSize));
-            var y = parseInt(Math.floor(Math.random()*nSize));
-            var r = parseInt(Math.floor(Math.random()*8));
+            var x = parseInt(Math.floor(Math.random() * nSize));
+            var y = parseInt(Math.floor(Math.random() * nSize));
+            var r = parseInt(Math.floor(Math.random() * 8));
 
             if(valida(palabras[i], x, y, dirx[r]))
             {
@@ -195,7 +181,7 @@ var sopator = (function(){
         for(var i=1; i<=palabras.length; i++)
         {
             lienzo.beginPath();
-            lienzo.font = "11pt Tahoma";
+            lienzo.font = "10pt Tahoma";
             lienzo.fillText(palabras[i-1], 10 + col * 150, nAlto + (20 * row) + espacio);
             lienzo.closePath();
             lienzo.fill();
@@ -212,7 +198,6 @@ var sopator = (function(){
     function solve2() {
       for (var i = 0; i < listaBk.length; i++) {
         var ix = equiv(listaBk[i][2]);
-        console.log(ix);
         rectangulo(lienzo,
                    11 + listaBk[i][0] * espacio + (dirs[ix][0] * espacio),
                    15 + listaBk[i][1] * espacio + (dirs[ix][1] * espacio),
@@ -227,10 +212,10 @@ var sopator = (function(){
 
     function equiv(dir) {
       var ix = 0;
-      console.log(dir[0] + " - " + dir[1]);
       for (var i = 0; i < dirx.length; i++) {
         if (dirx[i][0] === dir[0] && dirx[i][1] === dir[1]) {
           ix = i;
+          break;
         }
       }
       return ix;
@@ -241,8 +226,8 @@ var sopator = (function(){
       if ((Math.abs(a) + Math.abs(b)) == 2)
       {
         alfa = Math.PI/4;
-        x*=0.92;
-        y*=0.92;
+        x *= 0.92;
+        y *= 0.92;
       }
       else
       {
@@ -257,12 +242,14 @@ var sopator = (function(){
       }
 
       ctx.beginPath();
-      ctx.strokeStyle = "#b72727";
+      ctx.strokeStyle = "rgba(255, 0, 0, 0.5)";
+      ctx.fillStyle = "rgba(255, 255, 0, 0.25)";
       ctx.moveTo(xi, yi);
       ctx.lineTo(xi + x, yi + y);
       ctx.lineTo(xi + x -  (a === 0 ? 1 : a) * h * Math.cos(alfa), yi + y +  (b === 0 ? 1 : b) * h * Math.sin(alfa));
       ctx.lineTo(xi - (a === 0 ? 1 : a) * h * Math.cos(alfa), yi + (b === 0 ? 1 : b) * h * Math.sin(alfa));
       ctx.closePath();
+      ctx.fill();
       ctx.stroke();
     }
 
@@ -301,7 +288,6 @@ var sopator = (function(){
         solve2:   solve2,
         save:     save,
         toString: toString,
-        listaBk:  listaBk,
         palabras: palabras
     };
 })();
