@@ -210,6 +210,13 @@ var sopator = (function(){
       }
     }
 
+    function clean() {
+        colorFondo();
+        tablero = tableroBk.slice();
+        dibuja();
+        paintListWords();
+    }
+
     function equiv(dir) {
       var ix = 0;
       for (var i = 0; i < dirx.length; i++) {
@@ -287,6 +294,7 @@ var sopator = (function(){
         generate: generate,
         solve2:   solve2,
         save:     save,
+        clean:    clean,
         toString: toString,
         palabras: palabras
     };
