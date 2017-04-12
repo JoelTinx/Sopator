@@ -21,7 +21,7 @@ Si usted es desarrollador, tenga la libertad de estudiar, modificar y compartir 
 
 ### Demo:
 
-Puede ver el aplicativo en funcionamiento desde el siguiente enlace: [http://sopator.comuv.com/](http://sopator.comuv.com/)
+Puede ver el aplicativo en funcionamiento desde el siguiente enlace: [http://sopator.260mb.net/](http://sopator.260mb.net/)
 
 Cuando el proyecto alcance una estabilidad en su funcionamiento, espero poder contratar un dominio.
 
